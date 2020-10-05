@@ -21,12 +21,8 @@ public class Program {
         list.add(new Product("HD Case", 80.90));
 
         double factor = 1.1;
-
-        Consumer<Product> priceUpdate = product -> {
-            product.setPrice(product.getPrice() * factor);
-        };
-
-        list.forEach(priceUpdate);
+        
+        list.forEach(product -> product.setPrice(product.getPrice() * factor));
 
         list.forEach(System.out::println);
     }
